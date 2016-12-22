@@ -4,14 +4,16 @@
     <title>Airport Arrivals</title>
 </head>
 <body>  
+  
   <h2> Airport Arrivals Information </h2>
-  <table id="airportArrivals" class="striped" style="width:100%" border="2px"><!---->
-    <tr>
+  <table id="airportArrivals" class="tablecolor" style="width:100%" border="2px">
+    <tr class="header">
       <th>Time</th>
       <th>Flight Number</th> 
-      <th>Arrive from</th>
+      <th>Arriving from</th>
       <th></th>
     </tr>
+    
     <% let data =  arrivaldetails.flightTracks;  %>
     <% for (var i in data) { %>
       <tr>

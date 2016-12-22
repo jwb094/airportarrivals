@@ -8,4 +8,6 @@ router.get("/arrivals", displayPageController.showAirports);
 
 router.get("/flightDetails", displayPageController.showFlightData);
 
+router.get("/backtohomepage", displayPageController.backToHomePage);
+
 module.exports = router;

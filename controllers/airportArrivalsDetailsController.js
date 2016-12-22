@@ -4,6 +4,7 @@ const FetchAirportArrivalsApiData = require("../lib/fetchAirportArrivals");
 const FetchFlightDetailsApiData = require("../lib/fetchFlightDetails");
 
 
+
 class Airport {
     /**
    * This is a description
@@ -19,6 +20,7 @@ class Airport {
             return FetchSearchAirportApiData.doFetchSearchAirportApiData(result)
         })
         .then(result => {
+           
             // turn the result into a json Object
                 res.status(200).send({
                     result: result

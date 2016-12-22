@@ -42,6 +42,11 @@ class PageController {
     }); 
     }
 
+      static backToHomePage(req , res) {
+    res.render("posts/index",  {
+    }); 
+    }
+
 
   
 }
