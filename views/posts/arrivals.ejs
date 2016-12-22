@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Airport Arrivals</title>
+</head>
+<body>  
+  <h2> Airport Arrivals Information </h2>
+  <table id="airportArrivals" class="striped" style="width:100%" border="2px"><!---->
+    <tr>
+      <th>Time</th>
+      <th>Flight Number</th> 
+      <th>Arrive from</th>
+      <th></th>
+    </tr>
+    <% let data =  arrivaldetails.flightTracks;  %>
+    <% for (var i in data) { %>
+      <tr>
+        <td> <%= data[i].departureDate.dateLocal.substr(0,10);  %></td>
+        <td> <%= data[i].carrierFsCode %> <%= data[i].flightNumber %></td>
+        <td> <%= data[i].departureAirportFsCode %></td>
+        <td> <a name="airportCode" href="#" data-id=<%= data[i].flightId %>>  Flight details </a> </td><!---->
+      </tr>
+    <% } %>        
+    </table>
+  </body>
+</html>

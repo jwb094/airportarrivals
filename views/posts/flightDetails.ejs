@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Airport Arrivals</title>
+</head>
+<body>  
+   <h2>Flight Details</h2>
+  <table  class="striped" style="width:100%" border="2px">
+    <tr>
+      
+      <th><img src="img/information.png">  </th> <!-- flight airline / carrierFsCode -->
+      <th><img src="img/departures.png" align="center"> </th>
+      <th><img src="img/arrivals.png" align="center"></th> 
+      <th><img src="img/terminals.png" align="center"><Arrival Terminal</th>
+      <th><img src="img/timedate.png" align="center"></th><!-- Departure/arrival time   appendix airlines name -->
+   </tr>
+   <% let flightairline =  flightdetails.appendix;  %>
+    <% let flightdetailsdata =  flightdetails.flightStatus;  %>
+      <tr>
+        <td>  <p> FlightID: <%= flightdetailsdata.flightId %></p>     <p>CarrierCode: <%= flightdetailsdata.carrierFsCode %></p> 
+              <p> Airline: <%= flightairline.airlines[0].name %></p>  <p>Flight No. : <%= flightdetailsdata.flightNumber %></p>
+        
+        </td>
+        <td> <p><%= flightairline.airports[0].name %> (<%= flightdetailsdata.departureAirportFsCode%>)</p></td>    
+                                                                              
+
+        <td>   <p> Name: <%= flightairline.airports[1].name %> (<%= flightdetailsdata.arrivalAirportFsCode %>) </p> </td>
+        <td>   <%= flightdetailsdata.airportResources.arrivalTerminal %> </td>
+        <td>  <p> Date: <%= flightdetailsdata.arrivalDate.dateLocal.substr(0,10); %> </p> <p> Time: <%= flightdetailsdata.arrivalDate.dateLocal.substr(11,19); %> </p> </td>
+      </tr>     
+    </table>
+  </body>
+</html>
