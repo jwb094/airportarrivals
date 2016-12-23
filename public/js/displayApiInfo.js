@@ -16,21 +16,9 @@ $(() => {
                 let theData = data.result;
                 console.log(theData);
                 for (let i in theData) {//for each item in the object
-                    let theDataObject = theData[i];
-                    for (let arrayindex = 0; arrayindex < theDataObject.length; arrayindex++) {
-                        // if (theDataObject[arrayindex].classification < 3) {
-                               $("#airportName").append(`<p>${theDataObject[arrayindex].name}</p>`);
-                            $("#City").append(`<p>${theDataObject[arrayindex].city}</p>`);
-                            $("#countryName").append(`<p>${theDataObject[arrayindex].countryName}</p>`);
-                            $("#iataCode").append(`<p><a name="aiportCode" data-id="${theDataObject[arrayindex].iata}" href="#" >Arrivals</a></p>`);
-                            // $("#airportName").append(`<p>${theDataObject[arrayindex].name}</p>`);
-                            // $("#City").append(`<p>${theDataObject[arrayindex].city}</p>`);
-                            // $("#countryName").append(`<p>${theDataObject[arrayindex].countryName}</p>`);
-                            // $("#iataCode").append(`<p><a name="aiportCode" data-id="${theDataObject[arrayindex].iata}" href="#" >Arrivals</a></p>`);
-                        }
-
-                    // }
-
+                    $("#airportName").append(`<p>${theData[i].name}</p>`);
+                    $("#City").append(`<p>${theData[i].city}</p>`);
+                    $("#iataCode").append(`<p><a name="aiportCode" data-id="${theData[i].iata}" href="#" >${theData[i].iata}</a></p>`);
                 }
             });
     });
@@ -78,6 +66,7 @@ $(() => {
             }
         })
             .then((data) => {
+                 console.log(data);
                 window.location.href = "/flightDetails";
             });
     }

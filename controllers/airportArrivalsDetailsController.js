@@ -11,7 +11,7 @@ class Airport {
    * @method search
    * @param {String} req - req.body.name string
    * @param {String} res -  string
-   * @return {Object} return JSON Object OF Airport
+   * @return {Promise} return JSON Object OF Airport
    */
     static search(req, res) {
         //Fetch the lat and long
@@ -23,6 +23,7 @@ class Airport {
            
             // turn the result into a json Object
                 res.status(200).send({
+            //key: result   -   value: API JSON Object 
                     result: result
                 })
         })
@@ -37,7 +38,7 @@ class Airport {
    * @method getAirportArrivalData
    * @param {String} req - req.body.airport string
    * @param {String} res -  string
-   * @return {Object} return JSON Object of Airport Arrival details
+   * @return {Promise} return JSON Object of Airport Arrival details
    */
     static getAirportArrivalData(req, res) {
         //fetch the airport arrival data from api using input from front end as argument
@@ -45,6 +46,7 @@ class Airport {
             .then(result => {
                 //the data is stored as in a session as a Json Object
                 req.session.arrivals = result;
+               
                 //the JSON object is sent to the page
                 res.status(200).send({ result: result });
             })
@@ -59,7 +61,7 @@ class Airport {
    * @method doFetchSearchFlightDetails
    * @param {String} req - req.body.flight string
    * @param {String} res -  string
-   * @return {Object} return JSON Object of Individual flight details
+   * @return {Promise} return JSON Object of Individual flight details
    */
     static getFlightData(req, res) {
          //fetch the flight details data from api using input from front end as arguments
@@ -67,6 +69,7 @@ class Airport {
             .then(result => {
                 //the data is stored as in a session as a Json Object
                 req.session.flights = result;
+                 //console.log(req.session.flights = result);
                 res.status(200).send({ result: result });
             })
             .catch(err => {

@@ -21,10 +21,13 @@ class PageController {
    * render arrivals.ejs page in posts default directory views
    */
   static showAirports(req , res) {
+    
     res.render("posts/arrivals",  {
          // session object is stored in the page
         arrivaldetails: req.session.arrivals
+        
     }); 
+    
     }
 
     /** 
