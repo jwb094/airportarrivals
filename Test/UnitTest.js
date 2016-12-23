@@ -2,9 +2,8 @@ const chai = require('chai');
 const should = chai.should();
 const expect = require('chai').expect;
 const assert = require("chai").assert;
+const FetchData = require("../models/searchAirports");// get the file functions.js
 
-const FetchData = require("../lib/fetchLocationLatandLong");// get the file functions.js
-const func = new FetchData();// calling class
 
 // function alternative syntax =>
 //describe - mocha function - describe what we are trying to achieve- what your test does
@@ -19,12 +18,10 @@ var airportDetails = {
     classification: 2
 }
 
-describe("Demo", (done) => {
-    it("should return the long and lat", (done) => {/* SHOULD */
-        func.doFetchData("london")
-            .then(result => {
-                assert.isObject(result,"is ok");
-                done();
-            })
+describe("Search Airport ", () => {
+    it("should match model structure", (done) => {/* SHOULD */
+        const airportObj = new FetchData(airportDetails);
+        assert.isObject(airportObj, "it is an object");
+        done();
     })
 });
