@@ -1,9 +1,14 @@
 class FlightDetails {
 
+    //obj - JSON Object from API call
     constructor(obj) {
+        console.log("in the model");
+        console.log(obj);
         if (!obj.hasOwnProperty('appendix')) {
             throw new Error("Missing appendix");
         } else {
+            //instancate object of "this" airport
+            //"this" is of the class
             this.flightAirlineAppendix = obj.appendix;
             
         }

@@ -1,6 +1,6 @@
 class PageController {
 
-  // INDEX - GET //
+  
     /**
    * This is a description
    * @method airportsection
@@ -8,7 +8,7 @@ class PageController {
    * @param {String} res -  string
    * @return {Object} return render index.ejs page  in posts default directory views
    */
-  static airportsection(req , res) {
+  static airportSection(req , res) {
     res.render("posts/index")
     }
 
@@ -21,7 +21,6 @@ class PageController {
    * render arrivals.ejs page in posts default directory views
    */
   static showAirports(req , res) {
-    
     res.render("posts/arrivals",  {
          // session object is stored in the page
         arrivaldetails: req.session.arrivals
@@ -40,7 +39,8 @@ class PageController {
    */
   static showFlightData(req , res) {
     res.render("posts/flightDetails",  {
-        // session object is stored in the page
+    // session object is stored in the page as another JSON Object
+    // key:flightdetails  : value:req.session.flights
         flightdetails: req.session.flights
     }); 
     }

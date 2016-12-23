@@ -8,7 +8,8 @@ const session = require("express-session");
 
 app.set('view engine' , 'ejs');
 app.use(layouts);
-// add the router
+
+//middleware used
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('public'));
@@ -18,6 +19,7 @@ app.use(session({secret:"Airportdetails",
 app.use(routes);
 app.use(airportsroutes);
 
-app.listen(3000 , () => {
-  console.log('listening on port 3000');
+
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`Server listening on port ${process.env.PORT || 3000}`);
 });

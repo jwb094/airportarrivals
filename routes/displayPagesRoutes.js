@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const displayPageController = require('../controllers/displayPagesController');
 
-router.get("/",displayPageController.airportsection)
+router.get("/",displayPageController.airportSection)
 
 router.get("/arrivals", displayPageController.showAirports);
 

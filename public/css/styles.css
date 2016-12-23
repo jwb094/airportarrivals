@@ -1,23 +1,86 @@
-/*.tablecolor{
-    background-color: black;
-    color: yellow;
-}*/
-
-/*.header {
-    background-color: #fcc163;
-    color: black;
-}*/
-
 *{
     color:white;
 }
+
+h1 {
+    padding-left: 35%;
+    font-family: 'Josefin Slab', serif;
+}
+
+h2 {
+    padding-left: 36%;
+     font-family: 'Josefin Slab', serif;
+
+}
+
 body {
 
         background-image:url("../img/sunsetTakeOff.png");
 }
 
-iataCode > a {
+.airportCode {
     color: black;
+    font-family: 'Della Respira', serif;
 }
 
-  
+p{ 
+    font-size: 20px;
+    font-family: 'Della Respira', serif;
+}
+ /* Search Airport Page*/
+
+ /*#searchAirport{
+    /*padding-left:40%;
+    text-align: center;
+ }*/
+
+.input{
+
+    padding-left:35%;
+}
+
+
+
+/* Airport Arrivals Page*/
+ #airportArrivals  tr {
+     text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.title{
+     font-family: 'Della Respira', serif;
+     text-align: center;
+ }
+
+  #date{
+       font-size: 15px;
+       text-align: center;
+       font-family: 'Della Respira', serif;
+ }
+
+ #flightInfo{
+       font-size: 15px;
+       text-align: center;
+       font-family: 'Della Respira', serif;
+ }
+
+  #airportArrivalCode{
+       font-size: 15px;
+       text-align: center;
+       font-family: 'Della Respira', serif;
+ }
+
+  #flightDetails{
+       font-size: 15px;
+       text-align: center;
+       font-family: 'Della Respira', serif;
+ }
+
+ 
+
+
+/* FlightDetails Page*/
+ #flightdetails{
+   color: black;
+
+ }

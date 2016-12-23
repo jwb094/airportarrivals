@@ -12,13 +12,13 @@ $(() => {
             }
         })
             .then((data) => {
-                $("#SearchTitle").append(`<p>Airports around :${locationsearch}</p>`);
+                $("#SearchTitle").append(`<h4>Airports around :  ${locationsearch}</h4>`);
                 let theData = data.result;
                 console.log(theData);
                 for (let i in theData) {//for each item in the object
                     $("#airportName").append(`<p>${theData[i].name}</p>`);
                     $("#City").append(`<p>${theData[i].city}</p>`);
-                    $("#iataCode").append(`<p><a name="aiportCode" data-id="${theData[i].iata}" href="#" >${theData[i].iata}</a></p>`);
+                    $("#iataCode").append(`<p><a name="aiportCode"  class="airportCode" data-id="${theData[i].iata}" href="#" >View Arrivals</a></p>`);
                 }
             });
     });

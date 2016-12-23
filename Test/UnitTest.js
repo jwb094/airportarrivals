@@ -13,20 +13,18 @@ const func = new FetchData();// calling class
 
 
 var airportDetails = {
-        city:"london",
-        iata:"LHR",
-        name:"London Heathrow Airport",
-        classification: 2
+    city: "london",
+    iata: "LHR",
+    name: "London Heathrow Airport",
+    classification: 2
 }
 
-describe("Demo",(done) =>{
-    it("return relevant airport details", (done) => {/* SHOULD */
-       func.doFetchData("London")
-        .then(result => {
-         /*check if the reslt is a number */  
-         /* an = type compare */ 
-         result.should.be.an("number");
-       done();
-})
+describe("Demo", (done) => {
+    it("should return the long and lat", (done) => {/* SHOULD */
+        func.doFetchData("london")
+            .then(result => {
+                assert.isObject(result,"is ok");
+                done();
+            })
     })
 });
